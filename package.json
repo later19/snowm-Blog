@@ -1,0 +1,32 @@
+{
+  "name": "snowm",
+  "version": "1.0.0",
+  "description": "My good Nuxt.js project",
+  "author": "cuiyq7223",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+  },
+  "dependencies": {
+    "nuxt": "^2.0.0",
+    "element-ui": "^2.4.11",
+    "@nuxtjs/axios": "^5.3.6"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config": "^2.0.0",
+    "@nuxtjs/eslint-module": "^1.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "eslint-plugin-prettier": "^3.1.2",
+    "node-sass": "^4.13.1",
+    "prettier": "^1.19.1",
+    "sass-loader": "^8.0.2",
+    "scss-loader": "^0.0.1"
+  }
+}
