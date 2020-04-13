@@ -114,6 +114,7 @@ export default {
         .lately{
             font-size: 13px;
             border-top:1px solid rgb(71, 69, 69) ;
+            padding-bottom: 10px;
         }
     }
 }

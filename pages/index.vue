@@ -1,22 +1,49 @@
 <template>
   <div class="container">
-    <div class="homevideo">
-      <video muted autoplay loop src="../static/001.webm"></video>
+    <div>
+      <div class="homevideo">
+        <div class="mogle"></div>
+        <!-- <video muted autoplay loop src="../static/001.webm"></video> -->
+      </div>
     </div>
-    <headernume />
     <weather />
-    <div class="cartoon"> {{str2}}</div>
+    <div class="cartoon">
+      <div>{{str2}}</div>
+      <div class="links">
+        <a href="#container-main" ><img class="zhankai" src="~/static/zhankai .png">开始阅读</a>
+        <a href="https://github.com/later19"  target="_blank"><img class="github" src="~/static/github.png">Git Hub</a>
+      </div>
+    </div>
+      <div id="container-main">
+        <div class="musiclist">
+          <music />
+      </div>
+    </div>
   </div>
 </template>
-
 <script>
+import music from '~/components/music';
 export default {
+  components:{
+    music
+  },
   data(){
     return{
-      str: '上古结绳而治,后世圣人易之以书契。千年来，数据始终影响着人们的生活。人类一直在探索，大数据时代来临之时使用何种工具用于改变用户利用数据的方式。',
+      str: '人类一直在探索，大数据时代来临之时使用何种工具用于改变用户利用数据的方式。',
       i: 0,
       timer: 0,
       str2: '',
+      videoUpload: {
+        progress: false,
+        progressPercent: 0,
+        successPercent: 0,
+        music: {
+          title: '',
+          author: '',
+          url: '',
+          lrc: '[00:00.00]lrc here\n[00:01.00]aplayer'
+        }
+      },
     };
   },
   mounted() {
@@ -30,6 +57,7 @@ export default {
           this.typing();
         }, 200);
       } else {
+        this.str2=this.str2.substr(0, this.str2.length - 1);
         clearTimeout(this.timer);
       }
     }
@@ -40,17 +68,18 @@ export default {
 <style lang="scss" scoped>
 .container {
   position: relative;
+  height: 100%;
   .homevideo {
     height: 100%;
     width: 100%;
-    video {
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      // height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('../static/1.jpg')center center/cover no-repeat;
+    .mogle{
+      height: 100%;
+      width: 100%;
+      background-color: rgba(#be11a7,  0.5);
     }
   }
   .weather{
@@ -61,6 +90,58 @@ export default {
   }
   .cartoon{
     height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 25px;
+    color: #fabe00;
+    .links{
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      a{
+        font-size: 19px;
+        display: inline-block;
+        padding: 9px 32px;
+        margin: 50px 35px;
+        border-radius: 23px;
+        border: 1px solid #fff;
+        color: #fff;
+        text-decoration: none;
+        .zhankai{
+          width: 11px;
+          padding-right: 8px;
+          vertical-align: middle;
+          margin-top: -4px;
+        }
+        .github{
+            width: 18px;
+            padding-right: 8px;
+            vertical-align: middle;
+            margin-top: -4px;
+        }
+      }
+      a:hover{
+        background-color: salmon;
+        transition: .7s ease-out;
+      }
+    }
+  }
+  #container-main{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1000px;
+    min-height: 360px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    .musiclist{
+      // padding-top: 60px;
+    }
   }
 }
 </style>
