@@ -3,12 +3,16 @@
     padding: 0;
     list-style: none;
 }
+a{
+    text-decoration: none;
+}
 body,
 #__nuxt,
 #__layout{
     position: relative;
     width: 100%;
     height: 100vh;
+    min-width: 1200px;
 }
 html{
     font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',

@@ -1,10 +1,10 @@
 <template>
   <div class="weather">
-      <div id="container"></div>
+      <div id="weather-view-he"></div>
       <!-- <div class="weatherimg">
           <img src="~/static/tianqiicon_qingtian_heiye.png" alt="">
       </div> -->
-      <div class="weathermain">
+      <!-- <div class="weathermain">
           <p>城市：{{this.cityinfo}}</p>
           <p>天气：{{this.container}}</p>
           <p>温度：{{this.temperature}}</p>
@@ -15,7 +15,7 @@
           <p>最近4天天气情况</p>
           <p id="forecast"></p>
           </div>
-      </div>
+      </div> -->
   </div>
 </template>
 <script>
@@ -32,7 +32,18 @@ export default {
     };
   },
   mounted(){
-    this.initmap();
+    window.WIDGET = {FID: '7cxSH5FqFd'};
+    (function (d) {
+      let cs = d.createElement('link');
+      cs.rel = 'stylesheet';
+      cs.href = 'https://apip.weatherdt.com/float/static/js/r.js?v=1111';
+      let s = d.createElement('script');
+      s.src = 'https://apip.weatherdt.com/float/static/js/r.js?v=1111';
+      let sn = d.getElementsByTagName('script')[0];
+      sn.parentNode.insertBefore(cs, sn);
+      sn.parentNode.insertBefore(s, sn);
+    })(document);
+    // this.initmap();
   },
   created(){},
   methods:{
@@ -99,23 +110,25 @@ export default {
             cursor: pointer;
         }
     }
-    .weathermain{
-        min-width: 220px;
-        padding-top: 10px;
-        border-radius: 20px;
-        // background-image: url('../static/bg_301d.png');
-        color: #fff;
-        font-size: 15px;
-        line-height: 26px;
-        background-color: rgba(83, 58, 58, 0.5);
-        p{
-            padding-left:26px;
-        }
-        .lately{
-            font-size: 13px;
-            border-top:1px solid rgb(71, 69, 69) ;
-            padding-bottom: 10px;
-        }
+    .weather-view-he{
+      position: relative;
+      top: 60px;
+        // min-width: 220px;
+        // padding-top: 10px;
+        // border-radius: 20px;
+        // // background-image: url('../static/bg_301d.png');
+        // color: #fff;
+        // font-size: 15px;
+        // line-height: 26px;
+        // background-color: rgba(83, 58, 58, 0.5);
+        // p{
+        //     padding-left:26px;
+        // }
+        // .lately{
+        //     font-size: 13px;
+        //     border-top:1px solid rgb(71, 69, 69) ;
+        //     padding-bottom: 10px;
+        // }
     }
 }
 </style>

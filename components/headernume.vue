@@ -6,9 +6,9 @@
       </div>
       <div class="homenume">
         <ul>
-          <li>首页</li>
-          <li>分类</li>
-          <li>关于</li>
+          <li><router-link to="/">首页</router-link></li>
+          <li><router-link to="/classification">分类</router-link></li>
+          <li><router-link to="/about">关于</router-link></li>
         </ul>
       </div>
     </div>
@@ -57,7 +57,7 @@ export default {
     justify-content: space-between;
     z-index: 999;
     .homelogo {
-      padding-left: 60px;
+      padding-left: 160px;
     }
     .homenume {
       ul {
@@ -65,7 +65,7 @@ export default {
         justify-content: space-between;
         li {
           cursor: pointer;
-          padding: 0 18px;
+          padding-right: 36px;
         }
       }
     }

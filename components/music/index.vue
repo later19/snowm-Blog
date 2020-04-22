@@ -9,7 +9,7 @@
             </transition-group>
           </div>
           <div class="player-controls">
-            <div class="player-controls__item -favorite" :class="{ active : currentTrack.favorited }" @click="favorite">
+            <!-- <div class="player-controls__item -favorite" :class="{ active : currentTrack.favorited }" @click="favorite">
               <svg class="icon">
                 <use xlink:href="#icon-heart-o"></use>
               </svg>
@@ -18,7 +18,7 @@
               <svg class="icon">
                 <use xlink:href="#icon-link"></use>
               </svg>
-            </a>
+            </a> -->
             <div class="player-controls__item" @click="prevTrack">
               <svg class="icon">
                 <use xlink:href="#icon-prev"></use>
@@ -281,7 +281,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  // min-height: 100vh;
   background-size: cover;
 }
 @media screen and (max-width: 700px), (max-height: 500px) {

@@ -1,14 +1,8 @@
 <template>
   <div class="container">
-    <div>
-      <div class="homevideo">
-        <div class="mogle"></div>
-        <!-- <video muted autoplay loop src="../static/001.webm"></video> -->
-      </div>
-    </div>
     <weather />
     <div class="cartoon">
-      <div>{{str2}}</div>
+      <div style="letter-spacing:2px; font-size: 25px;">{{str2}}</div>
       <div class="links">
         <a href="#container-main" ><img class="zhankai" src="~/static/zhankai .png">开始阅读</a>
         <a href="https://github.com/later19"  target="_blank"><img class="github" src="~/static/github.png">Git Hub</a>
@@ -17,7 +11,9 @@
       <div id="container-main">
         <div class="musiclist">
           <music />
-      </div>
+        </div>
+        <div class="poetry">
+        </div>
     </div>
   </div>
 </template>
@@ -29,21 +25,10 @@ export default {
   },
   data(){
     return{
-      str: '人类一直在探索，大数据时代来临之时使用何种工具用于改变用户利用数据的方式。',
+      str: '我们会盛情拥抱，我们会一直到老，只要能够爱着你就好',
       i: 0,
       timer: 0,
       str2: '',
-      videoUpload: {
-        progress: false,
-        progressPercent: 0,
-        successPercent: 0,
-        music: {
-          title: '',
-          author: '',
-          url: '',
-          lrc: '[00:00.00]lrc here\n[00:01.00]aplayer'
-        }
-      },
     };
   },
   mounted() {
@@ -75,11 +60,12 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
-    background: url('../static/1.jpg')center center/cover no-repeat;
+    // background: url('../static/1.jpg')center center/cover no-repeat;
     .mogle{
       height: 100%;
       width: 100%;
-      background-color: rgba(#be11a7,  0.5);
+      // background-color: rgba(#be11a7,  0.5);
+      background-color: #ccc;
     }
   }
   .weather{
@@ -140,7 +126,8 @@ export default {
     display: flex;
     justify-content: space-between;
     .musiclist{
-      // padding-top: 60px;
+      .music{
+      }
     }
   }
 }
